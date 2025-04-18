@@ -51,7 +51,7 @@ RUN curl -L https://github.com/koalaman/shellcheck/releases/download/v0.10.0/she
 # Install releae-it plugins
 RUN npm install -g release-it@18.1.2 \
     && npm install -g @j-ulrich/release-it-regex-bumper@5.2.0 \
-    && npm install -g @release-it/conventional-changelog@10.0.0
+    && npm install -g @release-it/conventional-changelog@10.0.1
 
 # Install the Trivy Zarf Plugin
 RUN trivy plugin update && trivy plugin install zarf@v0.4.1
