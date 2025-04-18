@@ -1,0 +1,50 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+      "config:base"
+    ],
+    "enabledManagers": ["dockerfile", "regex"],
+    "packageRules": [
+      {
+        "matchDatasources": ["docker"],
+        "matchUpdateTypes": ["digest"],
+        "automerge": true
+      },
+      {
+        "matchDatasources": ["docker"],
+        "matchUpdateTypes": ["major", "minor", "patch"],
+        "automerge": false
+      }
+    ],
+    "dockerfile": {
+      "fileMatch": ["Dockerfile"]
+    },
+    "regexManagers": [
+      {
+        "fileMatch": ["Dockerfile"],
+        "matchStrings": [
+          "curl -L https:\\/\\/github\\.com\\/(?<depName>[\\w-]+\\/[\\w-]+)\\/releases\\/download\\/v(?<currentValue>[\\d.]+)\\/(?<artifact>[\\w\\-._]+) --output"
+        ],
+        "datasourceTemplate": "github-releases",
+        "versioningTemplate": "semver"
+      },
+      {
+        "fileMatch": ["Dockerfile"],
+        "matchStrings": [
+          "trivy plugin install zarf@v(?<currentValue>[\\d.]+)"
+        ],
+        "depNameTemplate": "defenseunicorns/zarf-plugin-trivy",
+        "datasourceTemplate": "github-releases",
+        "versioningTemplate": "semver"
+      },
+      {
+        "fileMatch": ["Dockerfile"],
+        "matchStrings": [
+          "npm install -g (?<depName>.+?)@(?<currentValue>[\\d.]+)"
+        ],
+        "datasourceTemplate": "npm",
+        "versioningTemplate": "npm"
+      }
+    ]
+  }
+  
