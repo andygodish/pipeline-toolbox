@@ -4,6 +4,7 @@
       "config:base"
     ],
     "enabledManagers": ["dockerfile", "regex"],
+    "dependencyDashboard": true,
     "packageRules": [
       {
         "matchDatasources": ["docker"],
@@ -14,6 +15,28 @@
         "matchDatasources": ["docker"],
         "matchUpdateTypes": ["major", "minor", "patch"],
         "automerge": false
+      },
+      {
+        "matchPackagePatterns": ["^aws-cli", "^bash", "^coreutils", "^curl", "^git", "^gitleaks", "^glab", 
+          "^gpg", "^gpg-agent", "^grype", "^helm", "^jq", "^kubectl", "^maru", "^nodejs", 
+          "^npm", "^openssl", "^oras", "^pinentry", "^trivy", "^yamllint", "^zarf"],
+        "matchDatasources": ["docker"],
+        "groupName": "apk dependencies"
+      },
+      {
+        "matchDepNames": ["hadolint/hadolint", "koalaman/shellcheck", "defenseunicorns/uds-cli"],
+        "matchDatasources": ["github-releases"],
+        "groupName": "binary tools"
+      },
+      {
+        "matchDepNames": ["release-it", "@j-ulrich/release-it-regex-bumper", "@release-it/conventional-changelog"],
+        "matchDatasources": ["npm"],
+        "groupName": "release-it and plugins"
+      },
+      {
+        "matchDepNames": ["defenseunicorns/zarf-plugin-trivy"],
+        "matchDatasources": ["github-releases"],
+        "groupName": "trivy plugins"
       }
     ],
     "dockerfile": {
@@ -40,11 +63,10 @@
       {
         "fileMatch": ["Dockerfile"],
         "matchStrings": [
-          "npm install -g (?<depName>.+?)@(?<currentValue>[\\d.]+)"
+          "npm install -g (?<depName>[^@\\s]+)@(?<currentValue>[\\d.]+)"
         ],
         "datasourceTemplate": "npm",
         "versioningTemplate": "npm"
       }
     ]
   }
-  
