@@ -38,7 +38,7 @@ RUN curl -L https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadol
     chmod +x /usr/bin/hadolint
 
 # Install UDS CLI
-RUN curl -L https://github.com/defenseunicorns/uds-cli/releases/download/v0.25.0/uds-cli_v0.25.0_Linux_amd64 --output /usr/bin/uds && \
+RUN curl -L https://github.com/defenseunicorns/uds-cli/releases/download/v0.27.8/uds-cli_v0.27.8_Linux_amd64 --output /usr/bin/uds && \
     chmod +x /usr/bin/uds
 
 # Install shellcheck
