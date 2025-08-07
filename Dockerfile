@@ -38,11 +38,11 @@ RUN curl -L https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadol
     chmod +x /usr/bin/hadolint
 
 # Install UDS CLI
-RUN curl -L https://github.com/defenseunicorns/uds-cli/releases/download/v0.25.0/uds-cli_v0.25.0_Linux_amd64 --output /usr/bin/uds && \
+RUN curl -L https://github.com/defenseunicorns/uds-cli/releases/download/v0.27.10/uds-cli_v0.27.10_Linux_amd64 --output /usr/bin/uds && \
     chmod +x /usr/bin/uds
 
 # Install shellcheck
-RUN curl -L https://github.com/koalaman/shellcheck/releases/download/v0.10.0/shellcheck-v0.10.0.linux.x86_64.tar.xz --output /tmp/shellcheck.tar.xz && \
+RUN curl -L https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz --output /tmp/shellcheck.tar.xz && \
     mkdir -p /tmp/shellcheck && \
     tar -xJf /tmp/shellcheck.tar.xz -C /tmp/shellcheck && \
     mv /tmp/shellcheck/shellcheck-v0.10.0/shellcheck /usr/bin/ && \
