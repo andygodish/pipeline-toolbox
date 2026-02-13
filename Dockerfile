@@ -34,15 +34,15 @@ RUN curl -o dod_ca.zip https://dl.dod.cyber.mil/wp-content/uploads/pki-pke/zip/u
     rm -rf /tmp/*
 
 # Install hadolint
-RUN curl -L https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 --output /usr/bin/hadolint && \
+RUN curl -L https://github.com/hadolint/hadolint/releases/download/v2.14.0/hadolint-Linux-x86_64 --output /usr/bin/hadolint && \
     chmod +x /usr/bin/hadolint
 
 # Install UDS CLI
-RUN curl -L https://github.com/defenseunicorns/uds-cli/releases/download/v0.25.0/uds-cli_v0.25.0_Linux_amd64 --output /usr/bin/uds && \
+RUN curl -L https://github.com/defenseunicorns/uds-cli/releases/download/v0.28.2/uds-cli_v0.28.2_Linux_amd64 --output /usr/bin/uds && \
     chmod +x /usr/bin/uds
 
 # Install shellcheck
-RUN curl -L https://github.com/koalaman/shellcheck/releases/download/v0.10.0/shellcheck-v0.10.0.linux.x86_64.tar.xz --output /tmp/shellcheck.tar.xz && \
+RUN curl -L https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz --output /tmp/shellcheck.tar.xz && \
     mkdir -p /tmp/shellcheck && \
     tar -xJf /tmp/shellcheck.tar.xz -C /tmp/shellcheck && \
     mv /tmp/shellcheck/shellcheck-v0.10.0/shellcheck /usr/bin/ && \
