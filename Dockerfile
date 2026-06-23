@@ -1,4 +1,4 @@
-FROM chainguard/wolfi-base:latest@sha256:1e731ada27b54d478d5be60c6765b48aa681237f87c71880ebff12f49288cf89
+FROM chainguard/wolfi-base:latest@sha256:c61ac6919b811ea53c4782d69f1fe05218ba3c25d53f01b6ab7892e621bd4370
 
 # Install dependencies
 # Keep alphabetized please
