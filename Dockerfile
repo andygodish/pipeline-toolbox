@@ -5,7 +5,7 @@ FROM chainguard/wolfi-base:latest@sha256:1d95114038f76513a9ace6fca107d5582b08c65
 RUN apk add --no-cache \
     aws-cli-v2=2.22.13-r0 \
     bash=5.2.37-r30 \
-    coreutils=9.6-r30 \
+    coreutils=9.11-r0 \
     curl=8.12.1-r0 \
     git=2.49.0-r0 \
     gitleaks=8.24.2-r0 \
