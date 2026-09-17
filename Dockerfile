@@ -21,7 +21,7 @@ RUN apk add --no-cache \
     npm=11.2.0-r0 \
     openssl=3.4.1-r2 \
     oras=1.2.2-r3 \
-    pinentry=1.3.1-r0 \
+    pinentry=1.3.2-r0 \
     trivy=0.61.0-r0 \
     yamllint=1.37.0-r0 \
     zarf=0.50.0-r1
