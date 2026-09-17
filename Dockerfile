@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     aws-cli-v2=2.22.13-r0 \
     bash=5.2.37-r30 \
     coreutils=9.6-r30 \
-    curl=8.12.1-r0 \
+    curl=8.22.0-r0 \
     git=2.49.0-r0 \
     gitleaks=8.24.2-r0 \
     glab=1.55.0-r0 \
