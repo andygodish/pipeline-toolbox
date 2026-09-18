@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     gpg-agent=2.2.41-r5 \
     grype=0.91.0-r0 \
     helm=3.17.2-r0 \
-    jq=1.7.1-r2 \
+    jq=1.8.2-r0 \
     kubectl-1.32-default=1.32.3-r3 \
     maru=0.6.0-r0 \
     nodejs=23.10.0-r0 \
