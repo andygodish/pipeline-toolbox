@@ -11,7 +11,7 @@ RUN apk add --no-cache \
     gitleaks=8.24.2-r0 \
     glab=1.55.0-r0 \
     gpg=2.2.41-r5 \
-    gpg-agent=2.2.41-r5 \
+    gpg-agent=2.4.9-r1 \
     grype=0.91.0-r0 \
     helm=3.17.2-r0 \
     jq=1.7.1-r2 \
